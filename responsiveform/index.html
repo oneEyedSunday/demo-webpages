@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Idiakose Sunday - SGA0.2 Responsive Page</title>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600">
+	<link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">   
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<div class="container">
+    	<h1 class="brand"><span id="showInfo"><i class="fa fa-info-circle"></i></span> Responsive Contact Page<button id="change"><i class="fa fa-exchange"></i></button></h1>
+		<div class="arrow-up hidden"></div>
+    	<!-- info div -->
+    	<div class="info-div hidden">
+    		<p>
+    			<strong>Designed with</strong> &nbsp;<em>Flexbox</em>
+    			<br>
+    			by &nbsp; &mdash;  Idiakose Sunday
+    		</p>
+    	</div>
+    	
+	    <div class="wrapper"><!-- add animation -->
+	    	<div class="company-info">
+		        <h3>Brand Name</h3>
+		        <ul>
+		          <li><i class="fa fa-road"></i> Address </li>
+		          <li><i class="fa fa-phone"></i> Phone Number</li>
+		          <li><i class="fa fa-envelope"></i> email@address.top</li>
+		        </ul>
+	    	</div>
+	      <div class="contact">
+	      	<h3>Contact Us</h3>
+	        <form>
+	        	<p>
+	        		<label>Name</label>
+	        		<input type="text" name="name">
+	        	</p>
+	        	<p>
+	        		<label>Company</label>
+	        		<input type="text" name="company">
+	        	</p>
+	        	<p>
+		          	<label>Email Address</label>
+		            <input type="email" name="email">
+	        	</p>
+	        	<p>
+	        		<label>Phone Number</label>
+	        		<input type="text" name="phone">
+	        	</p>
+	        	<p class="message">
+	        		<label>Message</label>
+	            	<textarea name="message" rows="5"></textarea>
+	        	</p>
+	          	<p class="submit-btn">
+	            	<input type="submit" value="Reach Out">
+	          	</p>
+	        </form>
+	      </div>
+	    </div>
+	    <!-- footer -->
+  </div>
+  <script>
+  	var fonts = ['Raleway', 'Lato', 'Algerian', 'Tahoma', 'sans-serif'];
+  	var length = fonts.length;
+  	var body = document.querySelector("body");
+  	var selected = 0;
+  	var test = 90;
+  	var fC = document.querySelector("#change");
+  	var info = document.querySelector("#showInfo");
+  	var infoDiv = document.querySelector(".info-div");
+  	var clear = document.querySelector("#clear");
+  	var arrow = document.querySelector(".arrow-up");
+  	var hidden = 1; // 1 means hidden
+
+  	fC.addEventListener('click', function(event){
+  		event.preventDefault();
+  		getNewFont();
+  		console.log("before", selected);
+  		body.style.fontFamily = fonts[selected];
+  		console.log("after",selected);
+  	});
+
+  	info.addEventListener("click", function(event){
+  		event.preventDefault();
+  		// alert(infoDiv.className);
+  		toggleInfoDiv(hidden);
+  	})
+
+  	function toggleInfoDiv(state){
+  		hidden  = !hidden;
+  		if(state){
+  			infoDiv.className = "info-div";
+  			arrow.className = "arrow-up";
+  			return;
+  		}
+  		
+  		infoDiv.className = "info-div hidden";
+  		arrow.className = "arrow-up hidden";
+  	}
+
+  	function getNewFont(){
+  		if(selected == length - 1){
+  			selected = 0;
+  		} else {
+  			++selected;
+  		}
+  	}
+  </script>
+</body>
+</html>

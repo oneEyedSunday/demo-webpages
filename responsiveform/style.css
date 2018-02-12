@@ -1,0 +1,187 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	background: #92bde7;
+	color: #485e74;
+	font-family: 'Raleway', 'Lato', 'Algerian', 'Tahoma', sans-serif;
+}
+
+.container {
+	margin: auto;
+	padding: 20px;
+	max-width: 1000px;
+	line-height: 1.6;
+}
+
+.container h1 {
+
+}
+
+.brand {
+	text-align: center;
+	margin-bottom: 5px;
+}
+
+ul {
+	list-style: none;
+	padding: 0;
+}
+
+.wrapper {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	width: 90%;	
+	margin-left: auto;
+	margin-right: auto;
+	box-shadow: 0 0 20px 0 rgba(72,94,116,0.7);
+}
+
+form {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.contact {
+	background-color: #f9feff;
+	flex: 2;
+	padding: 20px; 
+}
+
+.company-info {
+	background-color: #c9e6ff;
+	flex: 1;
+	padding: 20px; 
+}
+
+.company-info ul {
+	padding-top: 15px;
+}
+
+form {
+	margin-top: 20px;
+}
+
+form p {
+	width: 100%;
+}
+
+form p label {
+	display: block;
+}
+
+form p input, form p textarea {
+	width: 100%;
+	height: 50px;
+	padding:1em;
+  	border:1px solid #c9e6ff;
+  	/*font-family: "Work Sans", "Lato", Arial,  Helvetica ;*/
+  	font-size: 1.3em;
+}
+
+form p textarea {
+	height: 100%;
+}
+
+form p:last-child {
+	/*height: 100%;*/
+	padding-bottom : 0;
+}
+
+form p:last-child > input {
+	height: 100%;
+}
+
+form p {
+  	padding-bottom: 10px;
+}
+
+p.submit-btn input {
+	background-color: #c9e6ff;
+	text-transform: uppercase;
+	font-weight: bold;
+	/*vertical-align: center;*/
+}
+
+p.submit-btn input:hover, p.submit-btn input:focus {
+	color: #ffffff;
+	background-color :#92bde7;
+	transition: background-color 2s ease-in;
+}
+
+button#change {
+	border: 0;
+	/*background: #fff;*/
+	background-color: transparent;
+	color: #333;
+	font-size: 1.3em;
+	margin-left: 3px;
+}
+
+
+/* Tool tip */
+.info-div {
+	display: block;
+	position: relative;
+	background-color: #ffffff; 
+	height: 100px;
+	width: 300px;
+	margin-bottom: 20px;
+	left: 30%;
+}
+
+.info-div p {
+	padding-left: 15px;
+	padding-top: 20px;
+}
+
+.hidden {
+	display: none;
+}
+
+#clear {
+	clear: both;
+	height: 200px;
+}
+
+.arrow-up {
+	width: 0;
+	height: 0;
+	border-left: 10px solid transparent;
+	border-right: 10px solid transparent;
+	border-bottom: 10px solid #ffffff;
+	position: relative;
+	left: 40%;
+}
+
+/* MEDIA QUERIES */
+@media screen and (max-width: 600px) {
+	.container h1 {
+		font-size: 1.3em;
+	}
+
+
+	.wrapper {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.arrow-up {		
+		top: -24px;
+		left: 95px;
+	}
+
+	.info-div {
+		top: -24px;
+		left: 70px;
+	}
+
+	.brand {
+		margin-bottom: 20px;
+	}
+}

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Idiakose Sunday | Idiakose Sunday</title>
+	<link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+	<div class="container">
+		<aside class="socials">
+			<!-- some animation would be nice -->
+			<div class="contact">
+				<span><a href="https://twitter.com/idiakosesunday" target="_blank"><i class="fa fa-twitter"></i></a></span>
+			</div>
+			<div class="contact">
+				<span><a href="mailto://idiakosesunday@gmail.com"><i class="fa fa-envelope-o"></i></a></span>
+			</div>
+		</aside>
+		<div class="main" >
+			<section id="Angular">
+				<h2>Angular</h2>
+					<img src="https://angular.io/assets/images/logos/angular/angular.svg" alt="Angular icon">
+			</section>
+			<section id="PHP">
+				<h2>Php</h2>
+					<img src="https://qph.ec.quoracdn.net/main-qimg-8b4eefb725acc453cc544f8967d7f548" alt="Laravel Icon">
+			</section>
+			<section id="Python">
+				<h2>Python</h2>
+					<img src="https://78.media.tumblr.com/d1a94284c1dd57d8152c9fd91ea86e9f/tumblr_inline_n8jl6yxoAG1swlzyf.png" alt="">
+			</section>
+			<section id="divider">
+				<p>
+					We ain't just all work and no play
+					<br>
+					We bout that action
+				</p>
+			</section>
+			<section id="Football">
+				<h2>Ehem, The Hand of God</h2>
+				<!-- <div class="img-container"> -->
+					<img src="images/dona1.jpg" alt="hand of God">
+				<!-- </div> -->
+			</section>
+			<section id="joystick">
+				<h2>When the mood is right</h2>
+					<img src="images/joystick1.jpg" alt="joysticks">
+			</section>
+			
+		</div>
+		<aside class="side">
+			<!-- Github Pages of interest -->
+			<h1>
+				<span><i class="fa fa-github-alt"></i></span> Github <button>
+				<a href="https://github.com/oneEyedSunday">here</a>
+			</button>
+			</h1>
+			<ul> 
+				<li> <span><i class="fa fa-caret-down"></i></span> &nbsp; Python
+					&mdash;
+				</span>
+					<ul>
+						<li>Game Dev <span>&mdash;</span></li>
+						<li>Web Scraping <span>&mdash;</span></li>
+					</ul>
+				</li>
+				<li><span><i class="fa fa-python"></i></span> Angular <span>&mdash;</span></li>
+				<li><span><i class="fa fa-python"></i></span>PHP <span>&mdash;</span></li>
+			</ul>
+		</aside>
+	</div>
+	<script>
+		var icons = document.querySelectorAll("aside.socials .contact span");
+		var leftOffset = icons[0].style.left || 0;
+		// document.addEventListener("DOMContentLoaded", animator);
+		icons.forEach(function(icon){
+			icon.addEventListener("click", function(event){
+				// event.preventDefault();
+				alert("Done");
+				clearInterval(animator);
+				reset();
+				// console.log("Hovered");
+			})
+		})
+		function animateIcons(){
+			leftOffset += 10;
+			icons.forEach(function(icon){
+				icon.style.left = leftOffset + 'px';
+			});
+
+			if (leftOffset >= 40){
+				leftOffset = -40;
+			}
+		}
+
+		function reset(){
+			icons.forEach(function(icon){
+				icon.style.left = 0;
+			})
+		}
+
+		var animator = setInterval(animateIcons, 100);
+	</script>
+</body>
+
+</html>

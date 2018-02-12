@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Idiakose Sunday - SGA0.2 | Sidebar From Scatch</title>
+	<link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<!-- restrict width -->
+	<div class="container">
+		<nav id="sidebar" >
+			<div class="header">
+				<h3>Collapsible Sidebar</h3>
+			</div>
+
+			<ul class="links">
+				<li class="active"><a href="#">Home</a></li>
+				<li class="dropdown"><a href="#">About</a>
+					<ul class="sublist">
+						<li><a href="#">SubPage</a></li>
+						<li><a href="#">SUbpage2</a></li>
+						<li><a href="#">Subpage3</a></li>
+					</ul>
+				</li>
+				<li><a href="#">Contact</a></li>
+			</ul>
+		</nav>
+		<div id="content">
+			<div class="nav">
+				<button>
+					<i class="fa fa-toggle-on"></i><span>Toggle Sidebar</span>
+				</button>
+				<div class="nav-links">
+					<ul>
+						<li><a href="#">Link</a></li>
+						<li><a href="#">Link</a></li>
+						<li><a href="#">Link</a></li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="main-content">
+				<section>
+					<h4>Lorem ipsum dolor sit amet.</h4>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis unde tempora beatae modi sequi quis labore id, dolor nobis. Corporis nobis aperiam cumque minima libero, rem itaque quo vitae odit deserunt cupiditate fugit ipsum nam quis suscipit tempora, recusandae. Illo natus quae et similique vel voluptas rem in eligendi explicabo.</p>
+				</section>
+				<section>
+					<h4>Lorem ipsum dolor sit amet.</h4>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis unde tempora beatae modi sequi quis labore id, dolor nobis. Corporis nobis aperiam cumque minima libero, rem itaque quo vitae odit deserunt cupiditate fugit ipsum nam quis suscipit tempora, recusandae. Illo natus quae et similique vel voluptas rem in eligendi explicabo.</p>
+				</section>
+				<section>
+					<h4>Lorem ipsum dolor sit amet.</h4>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis unde tempora beatae modi sequi quis labore id, dolor nobis. Corporis nobis aperiam cumque minima libero, rem itaque quo vitae odit deserunt cupiditate fugit ipsum nam quis suscipit tempora, recusandae. Illo natus quae et similique vel voluptas rem in eligendi explicabo.</p>
+				</section>
+			</div>
+		</div>
+	</div>
+	<script>
+		var sidebar = document.querySelector("#sidebar");
+		var button = document.querySelector("button");
+		document.addEventListener("DOMContentLoaded", function(){
+			toggle();
+		})
+
+		button.addEventListener("click", change);
+
+		// window on resize
+		window.addEventListener("resize", function(){
+			toggle();	
+		})
+
+		function toggle(){
+			if(window.innerWidth <= 768){
+				sidebar.className = "";
+			}else {
+				sidebar.className = "active";
+			}
+		}
+
+		function change(){
+			sidebar.className === "" ? sidebar.className = "active" : sidebar.className = "";
+		}
+	</script>
+</body>
+</html>
